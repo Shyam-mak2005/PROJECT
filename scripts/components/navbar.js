@@ -2,16 +2,17 @@ export function mountNavbarAndFooter(){
   const header = document.getElementById('site-header');
   const footer = document.getElementById('site-footer');
   if(header){
+    const base = window.location.pathname.includes('/pages/') ? '..' : '.';
     header.innerHTML = `
       <nav class="nav" role="navigation" aria-label="Main">
         <div class="nav__inner container">
-          <a class="nav__brand" href="/index.html" aria-label="Maison Éclat home">Maison Éclat</a>
+          <a class="nav__brand" href="${base}/index.html" aria-label="Maison Éclat home">Maison Éclat</a>
           <div class="nav__menu" role="menubar">
-            <a class="nav__link" role="menuitem" href="/pages/category-men.html">Men</a>
-            <a class="nav__link" role="menuitem" href="/pages/category-women.html">Women</a>
-            <a class="nav__link" role="menuitem" href="/pages/category-unisex.html">Unisex</a>
-            <a class="nav__link" role="menuitem" href="/pages/category-limited.html">Limited</a>
-            <a class="nav__link" role="menuitem" href="/pages/lookbook.html">Lookbook</a>
+            <a class="nav__link" role="menuitem" href="${base}/pages/category-men.html">Men</a>
+            <a class="nav__link" role="menuitem" href="${base}/pages/category-women.html">Women</a>
+            <a class="nav__link" role="menuitem" href="${base}/pages/category-unisex.html">Unisex</a>
+            <a class="nav__link" role="menuitem" href="${base}/pages/category-limited.html">Limited</a>
+            <a class="nav__link" role="menuitem" href="${base}/pages/lookbook.html">Lookbook</a>
           </div>
           <div class="nav__pill">
             <form role="search" aria-label="Site search">
@@ -23,8 +24,8 @@ export function mountNavbarAndFooter(){
               <option>EUR</option>
               <option>GBP</option>
             </select>
-            <a class="nav__link" href="/pages/account.html" aria-label="Account">Account</a>
-            <a class="nav__link" href="/pages/cart.html" aria-label="Cart">Bag</a>
+            <a class="nav__link" href="${base}/pages/account.html" aria-label="Account">Account</a>
+            <a class="nav__link" href="${base}/pages/cart.html" aria-label="Cart">Bag</a>
           </div>
         </div>
       </nav>`;
@@ -39,6 +40,7 @@ export function mountNavbarAndFooter(){
 
   if(footer){
     footer.classList.add('footer');
+    const base = window.location.pathname.includes('/pages/') ? '..' : '.';
     footer.innerHTML = `
       <div class="container footer__grid">
         <div>
@@ -46,9 +48,9 @@ export function mountNavbarAndFooter(){
           <p class="badge-secure" aria-label="Secure checkout">🔒 Secure checkout via Apple Pay · Google Pay · Stripe</p>
         </div>
         <nav aria-label="Footer navigation">
-          <a href="/pages/about.html">About</a><br>
-          <a href="/pages/sustainability.html">Sustainability</a><br>
-          <a href="/pages/contact.html">Contact</a>
+          <a href="${base}/pages/about.html">About</a><br>
+          <a href="${base}/pages/sustainability.html">Sustainability</a><br>
+          <a href="${base}/pages/contact.html">Contact</a>
         </nav>
         <div>
           <label for="subscribe">Join our journal</label>

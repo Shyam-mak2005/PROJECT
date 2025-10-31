@@ -38,16 +38,7 @@
       </aside>
       <section aria-label="Products">
         <div class="grid grid--cards" data-grid>
-          <article class="card product" data-item data-price="890" data-size="42" data-color="black">
-            <figure class="card__media"><img src="../assets/images/prod-1.jpg" alt="Éclat Loafer 90" loading="lazy"></figure>
-            <div class="card__body"><h3 class="card__title">Éclat Loafer 90</h3><p class="price">$890</p></div>
-            <a class="btn btn--ghost card__quick" href="/pages/product.html?id=p1">View</a>
-          </article>
-          <article class="card product" data-item data-price="720" data-size="44" data-color="white">
-            <figure class="card__media"><img src="../assets/images/prod-3.jpg" alt="Calfskin Sneaker 70" loading="lazy"></figure>
-            <div class="card__body"><h3 class="card__title">Calfskin Sneaker 70</h3><p class="price">$720</p></div>
-            <a class="btn btn--ghost card__quick" href="/pages/product.html?id=p3">View</a>
-          </article>
+          <!-- Products will be dynamically inserted here -->
         </div>
       </section>
     </div>
@@ -56,9 +47,9 @@
 
   <script type="module">
     import { mountNavbarAndFooter } from '../scripts/components/navbar.js';
-    import { initFilters } from '../scripts/filters.js';
+    import { initCategoryPage } from '../scripts/category-page.js';
     mountNavbarAndFooter();
-    initFilters();
+    initCategoryPage('men');
   </script>
 </body>
 </html>

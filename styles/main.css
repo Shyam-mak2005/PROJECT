@@ -28,13 +28,12 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 img{
     max-width:100%;
     display:block;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
-img.loaded {
-    opacity: 1;
-}
+/* Optional loaded state kept for graceful fades if used */
+img.loaded { opacity: 1; }
 
 .image-loading {
     position: relative;

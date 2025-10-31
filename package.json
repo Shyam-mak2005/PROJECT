@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 5500 -c-1 .",
+    "serve": "http-server -p 5500 -c-1 .",
+    "preview": "http-server -p 8080 -c-1 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shyam-mak2005/PROJECT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shyam-mak2005/PROJECT/issues"
+  },
+  "homepage": "https://github.com/Shyam-mak2005/PROJECT#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

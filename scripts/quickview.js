@@ -73,9 +73,9 @@ export function initQuickView() {
         }, 250); // Match CSS transition duration
     }
 
-    // Event delegation for product clicks
+    // Event delegation for product quickview clicks (explicit triggers only)
     document.addEventListener('click', (e) => {
-        const trigger = e.target.closest('[data-quickview], .card');
+        const trigger = e.target.closest('[data-quickview]');
         if (trigger) {
             const productId = trigger.dataset.productId;
             const product = products.find(p => p.id === productId);

@@ -120,10 +120,14 @@ export class ProductFilter {
     renderProducts(products) {
         if (!this.productGrid) return;
         
+        const imgBase = window.location.pathname.includes('/pages/')
+            ? '../assets/images/products/'
+            : 'assets/images/products/';
+
         const productHTML = products.map(product => `
-            <article class="card" data-product-id="${product.id}">
+            <article class="card" data-product-id="${product.id}" tabindex="0" role="button" aria-label="View ${product.name}">
                 <div class="card__media">
-                    <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    <img src="${product.image.startsWith('http') ? product.image : (imgBase + product.image)}" alt="${product.name}" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src=this.src.endsWith('.jpg')?this.src.replace('.jpg','.png'):this.src.replace('.png','.jpg');}">
                 </div>
                 <div class="card__body">
                     <h3 class="card__title">${product.name}</h3>
@@ -139,6 +143,14 @@ export class ProductFilter {
         if (window.initQuickView) {
             window.initQuickView();
         }
+
+        // Navigate to product detail on click/Enter
+        this.productGrid.querySelectorAll('.card').forEach(card => {
+            const id = card.getAttribute('data-product-id');
+            const go = () => { window.location.href = `./product.html?id=${encodeURIComponent(id)}`; };
+            card.addEventListener('click', go);
+            card.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }});
+        });
     }
 }
 
