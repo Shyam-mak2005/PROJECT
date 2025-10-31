@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product — Maison Éclat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+  <main id="main" class="container" tabindex="-1">
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:28px">
+      <div>
+        <figure class="card__media" style="border-radius:16px;overflow:hidden">
+          <img data-zoom src="../assets/images/prod-1.jpg" alt="Product image" loading="eager" style="transition:transform .2s ease">
+        </figure>
+        <video src="../assets/videos/prod-1.mp4" controls style="margin-top:12px;border-radius:12px;background:#000" aria-label="Product video"></video>
+      </div>
+      <div>
+        <h1 class="h3">Éclat Loafer 90</h1>
+        <p class="price">$890</p>
+        <p>Handmade in Italy. Calf leather upper, leather lining, leather sole.</p>
+        <div style="display:grid;gap:10px;margin:14px 0">
+          <label>Size
+            <select>
+              <option>40</option><option>41</option><option>42</option><option>43</option><option>44</option>
+            </select>
+          </label>
+          <label>Color
+            <select>
+              <option>Black</option><option>OxBlood</option>
+            </select>
+          </label>
+          <label>Personalize (Monogram)
+            <input id="monogram" maxlength="3" placeholder="ABC">
+          </label>
+          <div>Preview: <strong id="mono-preview">ABC</strong></div>
+          <button class="btn btn--primary" id="add-to-bag" data-id="p1" data-price="890">Add to bag</button>
+          <div style="color:var(--muted);font-size:14px">Sustainability: Gold-rated tannery • Fair-wage artisans • Recyclable packaging</div>
+        </div>
+        <div>
+          <h2 class="h4">Complete the look</h2>
+          <div class="grid grid--cards">
+            <article class="card product"><figure class="card__media"><img src="../assets/images/prod-2.jpg" alt="Silk Blazer Aure" loading="lazy"></figure><div class="card__body"><div class="card__title">Silk Blazer Aure</div><p class="price">$1,690</p></div></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module">
+    import { mountNavbarAndFooter } from '../scripts/components/navbar.js';
+    import { initProductPage } from '../scripts/product.js';
+    mountNavbarAndFooter();
+    initProductPage();
+  </script>
+</body>
+</html>
+
+

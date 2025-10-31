@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Men — Maison Éclat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+  <main id="main" class="container" tabindex="-1">
+    <header class="section-head">
+      <h1 class="h3">Men</h1>
+    </header>
+    <div class="grid" style="grid-template-columns:260px 1fr;gap:28px">
+      <aside>
+        <form data-filters aria-label="Filters">
+          <div style="margin-bottom:16px">
+            <h2 class="h4">Size</h2>
+            <label><input type="checkbox" name="size" value="40"> 40</label><br>
+            <label><input type="checkbox" name="size" value="42"> 42</label><br>
+            <label><input type="checkbox" name="size" value="44"> 44</label>
+          </div>
+          <div style="margin-bottom:16px">
+            <h2 class="h4">Color</h2>
+            <label><input type="checkbox" name="color" value="black"> Black</label><br>
+            <label><input type="checkbox" name="color" value="white"> White</label><br>
+            <label><input type="checkbox" name="color" value="navy"> Navy</label>
+          </div>
+          <div>
+            <h2 class="h4">Price</h2>
+            <label>Min <input type="number" name="min" value="0"></label>
+            <label>Max <input type="number" name="max" value="2000"></label>
+          </div>
+        </form>
+      </aside>
+      <section aria-label="Products">
+        <div class="grid grid--cards" data-grid>
+          <article class="card product" data-item data-price="890" data-size="42" data-color="black">
+            <figure class="card__media"><img src="../assets/images/prod-1.jpg" alt="Éclat Loafer 90" loading="lazy"></figure>
+            <div class="card__body"><h3 class="card__title">Éclat Loafer 90</h3><p class="price">$890</p></div>
+            <a class="btn btn--ghost card__quick" href="/pages/product.html?id=p1">View</a>
+          </article>
+          <article class="card product" data-item data-price="720" data-size="44" data-color="white">
+            <figure class="card__media"><img src="../assets/images/prod-3.jpg" alt="Calfskin Sneaker 70" loading="lazy"></figure>
+            <div class="card__body"><h3 class="card__title">Calfskin Sneaker 70</h3><p class="price">$720</p></div>
+            <a class="btn btn--ghost card__quick" href="/pages/product.html?id=p3">View</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+
+  <script type="module">
+    import { mountNavbarAndFooter } from '../scripts/components/navbar.js';
+    import { initFilters } from '../scripts/filters.js';
+    mountNavbarAndFooter();
+    initFilters();
+  </script>
+</body>
+</html>
+
+
