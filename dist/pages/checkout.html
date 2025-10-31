@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — Maison Éclat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+  <main id="main" class="container" tabindex="-1">
+    <h1 class="h3">Checkout</h1>
+    <form id="checkout" style="display:grid;gap:16px;grid-template-columns:1fr 1fr">
+      <fieldset style="border:none;padding:0;display:grid;gap:12px">
+        <legend class="h4">Shipping</legend>
+        <label>Full name<input required name="name"></label>
+        <label>Email<input required type="email" name="email"></label>
+        <label>Address<input required name="address"></label>
+        <label>City<input required name="city"></label>
+        <label>Postal code<input required name="zip" pattern="[A-Za-z0-9 -]{3,10}"></label>
+        <label>Country<select required name="country"><option>United States</option><option>United Kingdom</option><option>Germany</option></select></label>
+      </fieldset>
+      <fieldset style="border:none;padding:0;display:grid;gap:12px">
+        <legend class="h4">Payment</legend>
+        <label>Cardholder<input required name="cardname"></label>
+        <label>Card number<input required inputmode="numeric" pattern="[0-9 ]{12,19}" placeholder="4242 4242 4242 4242"></label>
+        <div style="display:flex;gap:12px">
+          <label style="flex:1">Expiry<input required placeholder="MM/YY" pattern="[0-9/]{4,5}"></label>
+          <label style="flex:1">CVC<input required inputmode="numeric" pattern="[0-9]{3,4}"></label>
+        </div>
+        <div class="badge-secure">🔒 Secured by Stripe (mock)</div>
+      </fieldset>
+      <button class="btn btn--primary" type="submit" style="grid-column:1/-1">Pay now</button>
+    </form>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module">
+    import { mountNavbarAndFooter } from '../scripts/components/navbar.js';
+    mountNavbarAndFooter();
+    document.getElementById('checkout').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const form = e.currentTarget;
+      if(!form.checkValidity()) return;
+      alert('Payment successful (mock). Thank you!');
+      window.location.href = '../index.html';
+    });
+  </script>
+</body>
+</html>
+
+

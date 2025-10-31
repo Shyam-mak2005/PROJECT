@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Atelier Series — Maison Éclat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <nav class="nav container" aria-label="Main">
+    <div class="brand">Maison Éclat</div>
+  </nav>
+
+  <main role="main">
+    <section class="atelier-hero">
+      <div class="container">
+        <h1 class="title">The Atelier Series</h1>
+        <p class="tag">A Private Capsule for the Discerning Few.</p>
+        <p class="lede">A study in craftsmanship and rarity — each piece numbered and tailored to perfection.</p>
+      </div>
+    </section>
+
+    <section class="atelier-grid">
+      <div class="container">
+        <ul class="atelier-cards">
+          <li class="atelier-card">
+            <img src="../assets/images/products/eclipse-loafer.png" alt="Eclipse Suede Loafer">
+            <div class="atelier-meta">
+              <div class="name">Eclipse Suede Loafer — No. 12</div>
+              <div class="prov">Made in Italy • Vegetable-tanned calf</div>
+              <div class="actions">
+                <button class="btn btn-ghost btn-request" data-product="Eclipse Suede Loafer">Request Access</button>
+                <button class="btn btn-gold" disabled>12/50</button>
+              </div>
+            </div>
+          </li>
+          <li class="atelier-card">
+            <img src="../assets/images/products/nocturne-belt.png" alt="Nocturne Belt">
+            <div class="atelier-meta">
+              <div class="name">Nocturne Calfskin Belt — No. 08</div>
+              <div class="prov">Made in Italy • Full-grain calf</div>
+              <div class="actions">
+                <button class="btn btn-ghost btn-request" data-product="Nocturne Calfskin Belt">Request Access</button>
+                <button class="btn btn-gold" disabled>8/50</button>
+              </div>
+            </div>
+          </li>
+          <li class="atelier-card">
+            <img src="../assets/images/products/aurum-scarf.png" alt="Aurum Silk Scarf">
+            <div class="atelier-meta">
+              <div class="name">Aurum Silk Scarf — No. 04</div>
+              <div class="prov">100% Silk Charmeuse • Hand-rolled hems</div>
+              <div class="actions">
+                <button class="btn btn-ghost btn-request" data-product="Aurum Silk Scarf">Request Access</button>
+                <button class="btn btn-gold" disabled>4/50</button>
+              </div>
+            </div>
+          </li>
+          <li class="atelier-card">
+            <img src="../assets/images/products/luna-tote.png" alt="Luna Tote">
+            <div class="atelier-meta">
+              <div class="name">Luna Hand‑Stitched Tote — No. 01</div>
+              <div class="prov">Hand‑stitched • Vegetable-dyed leather</div>
+              <div class="actions">
+                <button class="btn btn-ghost btn-request" data-product="Luna Hand-Stitched Tote">Request Access</button>
+                <button class="btn btn-gold" disabled>1/50</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container" role="contentinfo">
+    <div>© Maison Éclat — Atelier Series</div>
+  </footer>
+
+  <!-- Modal (dummy) -->
+  <div id="atelierModal" class="modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3>Request Private Access</h3>
+      <p>Tell us how you’d like to wear it (optional). We'll reply with the next available appointment or purchase link.</p>
+      <form id="atelierForm">
+        <input type="hidden" name="product" value="">
+        <label>Email<br><input type="email" name="email" required placeholder="you@domain.com"></label><br><br>
+        <label>Note (size / personalization)<br><input type="text" name="note" placeholder="Monogram, size, or a note"></label><br><br>
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <button type="submit" class="btn btn-gold">Request Invite</button>
+          <button type="button" class="btn modal-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../scripts/main.js"></script>
+</body>
+</html>

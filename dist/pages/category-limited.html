@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Atelier Series — Maison Éclat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main" role="main" tabindex="-1">
+    <section class="atelier-hero">
+      <div class="container">
+        <h1 class="atelier-title">The Atelier Series</h1>
+        <p class="atelier-tag">A Private Capsule for the Discerning Few.</p>
+        <p class="atelier-lede">A study in craftsmanship and rarity — each piece numbered and tailored to perfection.</p>
+      </div>
+    </section>
+
+    <section class="atelier-grid">
+      <div class="container">
+        <ul class="atelier-cards">
+          <li class="atelier-card">
+            <img src="../assets/images/products/eclipse-loafer.png" alt="Eclipse Suede Loafer" loading="lazy">
+            <div class="atelier-meta">
+              <div class="atelier-name">Eclipse Suede Loafer — No. 12</div>
+              <div class="atelier-prov">Made in Italy • Vegetable-tanned calf</div>
+              <div class="atelier-actions">
+                <button class="btn btn--ghost btn-request" data-product="Eclipse Suede Loafer">Request Access</button>
+                <button class="btn btn--primary" disabled>12/50</button>
+              </div>
+            </div>
+          </li>
+          <li class="atelier-card">
+            <img src="../assets/images/products/nocturne-belt.png" alt="Nocturne Belt" loading="lazy">
+            <div class="atelier-meta">
+              <div class="atelier-name">Nocturne Calfskin Belt — No. 08</div>
+              <div class="atelier-prov">Made in Italy • Full-grain calf</div>
+              <div class="atelier-actions">
+                <button class="btn btn--ghost btn-request" data-product="Nocturne Calfskin Belt">Request Access</button>
+                <button class="btn btn--primary" disabled>8/50</button>
+              </div>
+            </div>
+          </li>
+          <li class="atelier-card">
+            <img src="../assets/images/products/aurum-scarf.png" alt="Aurum Silk Scarf" loading="lazy">
+            <div class="atelier-meta">
+              <div class="atelier-name">Aurum Silk Scarf — No. 04</div>
+              <div class="atelier-prov">100% Silk Charmeuse • Hand-rolled hems</div>
+              <div class="atelier-actions">
+                <button class="btn btn--ghost btn-request" data-product="Aurum Silk Scarf">Request Access</button>
+                <button class="btn btn--primary" disabled>4/50</button>
+              </div>
+            </div>
+          </li>
+          <li class="atelier-card">
+            <img src="../assets/images/products/luna-tote.png" alt="Luna Tote" loading="lazy">
+            <div class="atelier-meta">
+              <div class="atelier-name">Luna Hand‑Stitched Tote — No. 01</div>
+              <div class="atelier-prov">Hand‑stitched • Vegetable-dyed leather</div>
+              <div class="atelier-actions">
+                <button class="btn btn--ghost btn-request" data-product="Luna Hand-Stitched Tote">Request Access</button>
+                <button class="btn btn--primary" disabled>1/50</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Modal for Request Access -->
+  <div id="atelierModal" class="modal" aria-hidden="true" hidden>
+    <div class="modal__dialog" role="dialog" aria-modal="true">
+      <button class="modal__close atelier-modal-close" aria-label="Close">×</button>
+      <div class="modal__content" style="grid-template-columns: 1fr;">
+        <div>
+          <h3 class="h4">Request Private Access</h3>
+          <p style="color: var(--muted); margin-bottom: 20px;">Tell us how you'd like to wear it (optional). We'll reply with the next available appointment or purchase link.</p>
+          <form id="atelierForm">
+            <input type="hidden" name="product" value="">
+            <label>Email<br>
+              <input type="email" name="email" required placeholder="you@domain.com" style="margin-top: 8px;">
+            </label>
+            <label style="margin-top: 16px; display: block;">Note (size / personalization)<br>
+              <input type="text" name="note" placeholder="Monogram, size, or a note" style="margin-top: 8px;">
+            </label>
+            <div style="display:flex;gap:12px;align-items:center;margin-top:20px">
+              <button type="submit" class="btn btn--primary">Request Invite</button>
+              <button type="button" class="btn btn--ghost atelier-modal-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { mountNavbarAndFooter } from '../scripts/components/navbar.js';
+    import { initAtelierPage } from '../scripts/atelier.js';
+    mountNavbarAndFooter();
+    initAtelierPage();
+  </script>
+</body>
+</html>
+
+

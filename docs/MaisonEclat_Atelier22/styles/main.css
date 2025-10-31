@@ -1,0 +1,47 @@
+:root{
+  --bg:#0a0b0d;
+  --surface:#111317;
+  --text:#0f0f0f;
+  --muted:#7a6b5d;
+  --gold:#8c6b29; /* deep gold */
+  --cream:#fffaf6;
+  --radius:12px;
+  --space:24px;
+  --container:1200px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+.container{max-width:var(--container);padding:0 var(--space);margin:0 auto}
+/* Navbar & footer simplified */
+.nav{background:transparent;padding:18px 0;color:var(--text);}
+.nav .brand{font-family:"Playfair Display",serif;font-size:20px;letter-spacing:1px}
+.footer{padding:36px 0;color:var(--muted);font-size:14px}
+
+/* Atelier Section */
+.atelier-hero{background:var(--cream);padding:88px 0 48px;color:var(--text);}
+.atelier-hero .title{font-family:"Playfair Display",serif;font-size:36px;margin:0 0 8px}
+.atelier-hero .tag{color:var(--muted);margin-bottom:20px}
+.atelier-grid{background:var(--cream);padding:24px 0 72px}
+.atelier-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;list-style:none;padding:40px 0 0;margin:0}
+.atelier-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(12,10,8,0.06);transition:transform .45s,box-shadow .45s}
+.atelier-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(12,10,8,0.12)}
+.atelier-card img{width:100%;height:280px;object-fit:cover;display:block}
+.atelier-meta{padding:18px;display:flex;flex-direction:column;gap:8px}
+.atelier-meta .name{font-family:"Playfair Display",serif;font-size:18px}
+.atelier-meta .prov{font-size:13px;color:var(--muted)}
+.atelier-meta .actions{display:flex;align-items:center;gap:12px;margin-top:8px}
+.btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--text)}
+.btn-gold{background:var(--gold);color:#fff;border:none;border-radius:10px;padding:10px 14px;cursor:pointer}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,0.6);opacity:0;visibility:hidden;transition:all .28s}
+.modal.active{opacity:1;visibility:visible}
+.modal-dialog{background:#fff;padding:22px;border-radius:12px;width:420px;max-width:94%}
+.modal-close{position:absolute;right:18px;top:12px;border:none;background:none;font-size:20px;cursor:pointer}
+
+/* Responsive */
+@media (max-width:768px){
+  .atelier-hero{padding:48px 0}
+  .atelier-card img{height:200px}
+}
