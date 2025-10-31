@@ -1,7 +1,8 @@
-export function mountNavbarAndFooter(){
+export function mountNavbarAndFooter() {
   const header = document.getElementById('site-header');
   const footer = document.getElementById('site-footer');
-  if(header){
+
+  if (header) {
     const base = window.location.pathname.includes('/pages/') ? '..' : '.';
     header.innerHTML = `
       <nav class="nav" role="navigation" aria-label="Main">
@@ -26,26 +27,55 @@ export function mountNavbarAndFooter(){
             </select>
             <a class="nav__link" href="${base}/pages/account.html" aria-label="Account">Account</a>
             <a class="nav__link" href="${base}/pages/cart.html" aria-label="Cart">Bag</a>
+            
+            <!-- 🌙 Theme toggle button -->
+            <button id="theme-toggle" class="btn btn--ghost" aria-label="Toggle Theme">
+              🌙
+            </button>
           </div>
         </div>
       </nav>`;
 
+    // ✅ Add scroll behavior for navbar transparency
     const nav = header.querySelector('.nav');
     const onScroll = () => {
-      if(window.scrollY > 24){ nav?.classList.add('nav--solid'); } else { nav?.classList.remove('nav--solid'); }
+      if (window.scrollY > 24) nav.classList.add('nav--solid');
+      else nav.classList.remove('nav--solid');
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ✅ THEME TOGGLE LOGIC START
+    const toggleBtn = header.querySelector('#theme-toggle');
+    const root = document.documentElement;
+
+    // Apply saved theme if exists
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    root.setAttribute('data-theme', savedTheme);
+    toggleBtn.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+
+    // Listen for click toggle
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      toggleBtn.textContent = newTheme === 'light' ? '☀️' : '🌙';
+    });
+    // ✅ THEME TOGGLE LOGIC END
   }
 
-  if(footer){
+  // ✅ Footer content (unchanged)
+  if (footer) {
     footer.classList.add('footer');
     const base = window.location.pathname.includes('/pages/') ? '..' : '.';
     footer.innerHTML = `
       <div class="container footer__grid">
         <div>
           <div class="nav__brand">Maison Éclat</div>
-          <p class="badge-secure" aria-label="Secure checkout">🔒 Secure checkout via Apple Pay · Google Pay · Stripe</p>
+          <p class="badge-secure" aria-label="Secure checkout">
+            🔒 Secure checkout via Apple Pay · Google Pay · Stripe
+          </p>
         </div>
         <nav aria-label="Footer navigation">
           <a href="${base}/pages/about.html">About</a><br>
@@ -57,20 +87,20 @@ export function mountNavbarAndFooter(){
           <input id="subscribe" type="email" placeholder="Your email">
         </div>
       </div>
-      <div class="container" style="margin-top:12px;color:var(--muted);font-size:12px">© <span id="y"></span> Maison Éclat</div>`;
+      <div class="container" style="margin-top:12px;color:var(--muted);font-size:12px">
+        © <span id="y"></span> Maison Éclat
+      </div>`;
     const y = footer.querySelector('#y');
-    if(y){ y.textContent = new Date().getFullYear().toString(); }
+    if (y) y.textContent = new Date().getFullYear().toString();
   }
 }
 
-export function initCarousel(){
+export function initCarousel() {
   const track = document.querySelector('.carousel__track');
   const prev = document.querySelector('.carousel__prev');
   const next = document.querySelector('.carousel__next');
-  if(!track || !prev || !next) return;
+  if (!track || !prev || !next) return;
   const scrollBy = () => track.clientWidth * 0.9;
-  prev.addEventListener('click',()=> track.scrollBy({left:-scrollBy(),behavior:'smooth'}));
-  next.addEventListener('click',()=> track.scrollBy({left:scrollBy(),behavior:'smooth'}));
+  prev.addEventListener('click', () => track.scrollBy({ left: -scrollBy(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: scrollBy(), behavior: 'smooth' }));
 }
-
-

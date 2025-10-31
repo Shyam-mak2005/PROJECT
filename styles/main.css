@@ -1,7 +1,7 @@
 /* Theme tokens */
 :root {
-    --bg: #0a0b0d;
-    --surface: #111317;
+    --bg: #101217;
+    --surface: #1b1e24;
     --elev: #181b21;
     --text: #f5f6f7;
     --muted: #b5bac3;
@@ -768,9 +768,9 @@ label {
 
 /* Atelier Series Styles */
 .atelier-hero {
-    background: var(--cream);
+    background: var(--bg);
     padding: 88px 0 48px;
-    color: #0f0f0f;
+    color: var(--text);
     margin-top: 60px;
     /* Account for fixed navbar */
 }
@@ -779,7 +779,7 @@ label {
     font-family: "Playfair Display", serif;
     font-size: clamp(28px, 4vw, 48px);
     margin: 0 0 8px;
-    color: #0f0f0f;
+    color: var(--gold)
 }
 
 .atelier-hero .atelier-tag {
@@ -789,17 +789,18 @@ label {
 }
 
 .atelier-hero .atelier-lede {
-    color: #555;
+    color: var(--muted);
     max-width: 60ch;
     font-size: 15px;
 }
 
 .atelier-grid {
-    background: var(--cream);
+    background: var(--bg);
     padding: 24px 0 72px;
 }
 
 .atelier-cards {
+    background: var(--bg);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 28px;
@@ -809,7 +810,7 @@ label {
 }
 
 .atelier-card {
-    background: #fff;
+    background: var(--surface);
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(12, 10, 8, 0.06);
@@ -818,7 +819,7 @@ label {
 
 .atelier-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(12, 10, 8, 0.12);
+    box-shadow: 0 20px 60px var(--shadow-lg);
 }
 
 .atelier-card img {
@@ -838,7 +839,7 @@ label {
 .atelier-meta .atelier-name {
     font-family: "Playfair Display", serif;
     font-size: 18px;
-    color: #0f0f0f;
+    color: var(--text);
 }
 
 .atelier-meta .atelier-prov {
